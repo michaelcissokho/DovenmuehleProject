@@ -21,11 +21,12 @@ export function ViewStrings({ strings, onLoadPage }) {
   }, []);
 
   return (
-    <div>
+    <div style={{ textAlign: 'center' }}>
       <h1>All Strings:</h1>
       {strings.map(string => (
         <li key={uuid()}> {string} </li>
       ))}
+      <br />
       <Link to="/addString">Add A String</Link>
     </div>
   );

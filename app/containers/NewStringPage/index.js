@@ -34,7 +34,7 @@ const NewStringPage = () => {
   };
 
   return (
-    <div>
+    <div style={{ textAlign: 'center' }}>
       <h1>Add A New String:</h1>
 
       <div>
