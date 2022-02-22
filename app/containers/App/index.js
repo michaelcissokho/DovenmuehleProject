@@ -10,16 +10,18 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
+import ViewStrings from '../ViewStringsPage';
 
 import GlobalStyle from '../../global-styles';
+import NewStringPage from '../NewStringPage';
 
 export default function App() {
   return (
     <div>
       <Switch>
-        <Route exact path="/" component={HomePage} />
+        <Route exact path="/" component={ViewStrings} />
+        <Route exact path="/addString" component={NewStringPage} />
         <Route component={NotFoundPage} />
       </Switch>
       <GlobalStyle />
