@@ -5,7 +5,9 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div>
+      <div
+        style="text-align: center;"
+      >
         <h1>
           Add A New String:
         </h1>
@@ -16,6 +18,7 @@ Object {
               data-testid="inputBox"
               name="string"
               placeholder="New String"
+              required=""
               value=""
             />
             <button
@@ -44,7 +47,9 @@ Object {
     </div>
   </body>,
   "container": <div>
-    <div>
+    <div
+      style="text-align: center;"
+    >
       <h1>
         Add A New String:
       </h1>
@@ -55,6 +60,7 @@ Object {
             data-testid="inputBox"
             name="string"
             placeholder="New String"
+            required=""
             value=""
           />
           <button

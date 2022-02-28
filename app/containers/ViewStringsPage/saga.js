@@ -5,14 +5,14 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 import { GET_STRINGS } from './constants';
-import { setStrings } from './actions';
+import { setStrings, getStringsError, loadingStrings } from './actions';
+
+// function to generate delay to see loading indicator
+const delay = ms => new Promise(res => setTimeout(res, ms));
 
 // function that actually calls api
 function getStrings() {
-  return axios.request({
-    method: 'get',
-    url: 'http://localhost:3000/api',
-  });
+  return axios.get('http://localhost:3000/api');
 }
 
 /**
@@ -21,11 +21,13 @@ function getStrings() {
 function* handleGetStrings() {
   try {
     const response = yield call(getStrings);
+    yield put(loadingStrings());
+    yield delay(3000);
+
     const { strings } = response.data;
     yield put(setStrings(strings));
   } catch (error) {
-    // eslint-disable-next-line no-console
-    console.log(error);
+    yield put(getStringsError());
   }
 }
 
